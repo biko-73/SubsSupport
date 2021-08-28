@@ -1,58 +1,42 @@
 #!/bin/sh
-##############################################################################################################
-##
-## Script Purpose:
-##		Download and install IPK/DEB (Py2/Py3)
-##
-## Command: wget https://raw.githubusercontent.com/biko-73/openmultiboot/main/installer.sh -O - | /bin/sh
-##
-##############################################################################################################
 
+# ==========================================
+# SCRIPT : DOWNLOAD AND INSTALL SubsSupport #
+# =================================================================================================================
+# Command: wget https://raw.githubusercontent.com/biko-73/SubsSupport/main/installer.sh -O - | /bin/sh #
+# =================================================================================================================
 
-##############################################################################################################
+###################################################################################################################
 # Plugin	... Enter Manually
-##############################################################################################################
+###################################################################################################################
 
-MY_IPK_PY2="enigma2-plugin-extensions-openmultiboot_v2.6_all-Python2-20180202.ipk"
-MY_IPK_PY3="enigma2-plugin-extensions-openmultiboot_v1.0_all-Python3-20210806.ipk"
+PACKAGE_DIR='SubsSupport/main'
+MY_IPK="enigma2-plugin-extensions-subssupport_1.5.8-r3_all.ipk"
+MY_DEB="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
 
-MY_DEB_PY2="enigma2-plugin-extensions-openmultiboot_v1.0_all-Python2-20210806.deb"
-MY_DEB_PY3="enigma2-plugin-extensions-openmultiboot_v1.0_all-Python3-20210806.deb"
 
-PACKAGE_DIR='openmultiboot/main'
-
-##############################################################################################################
+####################################################################################################################
 # Auto ... Do not change
-##############################################################################################################
-MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
-
-PYTHON_VERSION=$(python -c 'import sys; print(sys.version_info[0])')
+####################################################################################################################
 
 # Decide : which package ?
+MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
 if which dpkg > /dev/null 2>&1; then
-	if [ "$PYTHON_VERSION" -eq "2" ]; then
-		MY_FILE=$MY_DEB_PY2
-	else echo "333";
-		MY_FILE=$MY_DEB_PY3
-	fi;
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
+	MY_FILE=$MY_DEB
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
 else
-	if [ "$PYTHON_VERSION" -eq "2" ]; then
-		MY_FILE=$MY_IPK_PY2
-	else echo "333";
-		MY_FILE=$MY_IPK_PY3
-	fi;
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
+	MY_FILE=$MY_IPK
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_IPK
 fi
 MY_TMP_FILE="/tmp/"$MY_FILE
-
 
 echo ''
 echo '************************************************************'
 echo '**                         STARTED                        **'
 echo '************************************************************'
 echo "**                 Uploaded by: Biko_73                   **"
-echo "**  https://www.tunisia-sat.com/forums/threads/4120814/   **"
+echo "**                 Server by  : linuxsat                  **"
+echo "**  https://www.tunisia-sat.com/forums/threads/4066186/   **"
 echo "************************************************************"
 echo ''
 
@@ -81,9 +65,6 @@ if [ -f $MY_TMP_FILE ]; then
 		opkg install --force-reinstall $MY_TMP_FILE
 	fi
 	MY_RESULT=$?
-
-	# Remove Installation file
-	rm -f $MY_TMP_FILE > /dev/null 2>&1
 
 	# Result
 	echo ''
