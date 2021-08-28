@@ -10,7 +10,7 @@
 # Plugin	... Enter Manually
 ###################################################################################################################
 
-PACKAGE_DIR='main'
+PACKAGE_DIR='SubsSupport/main'
 MY_IPK="enigma2-plugin-extensions-subssupport_1.5.8-r3_all.ipk"
 MY_DEB="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
 
