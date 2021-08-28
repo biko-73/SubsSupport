@@ -10,7 +10,7 @@
 # Plugin	... Enter Manually
 ###################################################################################################################
 
-PACKAGE_DIR='SubsSupport'
+PACKAGE_DIR='SubsSupport/main'
 MY_IPK="enigma2-plugin-extensions-subssupport_1.5.8-r3_all.ipk"
 MY_DEB="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
 
@@ -20,7 +20,7 @@ MY_DEB="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
 ####################################################################################################################
 
 # Decide : which package ?
-MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/SubsSupport/main/"
+MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
 if which dpkg > /dev/null 2>&1; then
 	MY_FILE=$MY_DEB
 	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
