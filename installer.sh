@@ -17,7 +17,7 @@ MY_IPK_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r3_all.ipk"
 MY_IPK_PY3="enigma2-plugin-extensions-subssupport_v1.5.6_all.ipk"
 
 MY_DEB_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
-MY_DEB_PY3="xxx"
+MY_DEB_PY3=""
 
 PACKAGE_DIR='SubsSupport/main'
 
@@ -32,20 +32,29 @@ PYTHON_VERSION=$(python -c 'import sys; print(sys.version_info[0])')
 if which dpkg > /dev/null 2>&1; then
 	if [ "$PYTHON_VERSION" -eq "2" ]; then
 		MY_FILE=$MY_DEB_PY2
-	else echo "333";
+	else
 		MY_FILE=$MY_DEB_PY3
 	fi;
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
 else
 	if [ "$PYTHON_VERSION" -eq "2" ]; then
 		MY_FILE=$MY_IPK_PY2
-	else echo "333";
+	else
 		MY_FILE=$MY_IPK_PY3
 	fi;
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
 fi
-MY_TMP_FILE="/tmp/"$MY_FILE
 
+# If no suitable package available
+if [ -z "$MY_FILE" ]; then
+	echo ''
+	echo '************************************************************'
+	echo '**          NO Suitable Version Found ON Server           **'
+	echo '************************************************************'
+	echo ''
+	exit 0
+fi
+
+MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
+MY_TMP_FILE="/tmp/"$MY_FILE
 
 echo ''
 echo '************************************************************'
