@@ -14,7 +14,7 @@
 ##############################################################################################################
 
 MY_IPK_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r3_all.ipk"
-MY_IPK_PY3="enigma2-plugin-extensions-subssupport_v1.5.6_all.ipk"
+MY_IPK_PY3="enigma2-plugin-extensions-subssupport_1.5.8-v3_all.ipk"
 
 MY_DEB_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
 MY_DEB_PY3=""
