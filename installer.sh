@@ -13,8 +13,8 @@
 # Plugin	... Enter Manually
 ##############################################################################################################
 
-MY_IPK_PY2="enigma2-plugin-extensions-subssupport_1.5.8_all.ipk"
-MY_IPK_PY3="enigma2-plugin-extensions-subssupport_1.5.8-r4_all.ipk"
+MY_IPK_PY2="enigma2-plugin-extensions-subssupport-py2_1.5.8_all.ipk"
+MY_IPK_PY3="enigma2-plugin-extensions-subssupport-py3_1.5.8-r4_all.ipk"
 
 MY_DEB_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
 MY_DEB_PY3=""
