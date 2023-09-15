@@ -16,8 +16,8 @@
 MY_IPK_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r9-py2_all.ipk"
 MY_IPK_PY3="enigma2-plugin-extensions-subssupport_1.5.8-r9-py3_all.ipk"
 
-MY_DEB_PY2="enigma2-plugin-extensions-subssupport_1.5.8-r2_all.deb"
-MY_DEB_PY3=""
+MY_DEB_PY2=""
+MY_DEB_PY3="enigma2-plugin-extensions-subssupport_1.5.8-r9-py3_all.deb"
 
 PACKAGE_DIR='SubsSupport/main'
 
